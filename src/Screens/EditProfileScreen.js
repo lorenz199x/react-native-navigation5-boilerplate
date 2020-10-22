@@ -23,7 +23,6 @@ const EditProfileScreen = () => {
   const [image, setImage] = useState('https://api.adorable.io/avatars/80/abott@adorable.png');
   const { colors } = useTheme();
 
-  // not included in tutorial
   const takePhotoFromCamera = () => {
     ImagePicker.openCamera({
       compressImageMaxWidth: 300,
@@ -36,7 +35,6 @@ const EditProfileScreen = () => {
       this.bs.current.snapTo(1);
     });
   }
-  // not included in tutorial
   const choosePhotoFromLibrary = () => {
     ImagePicker.openPicker({
       width: 300,

@@ -14,12 +14,12 @@ import files from '../../assets/filesBase64';
 
 const ProfileScreen = () => {
 
-  // not included in tutorial
   const myCustomShare = async() => {
     const shareOptions = {
       message: 'Order your next meal from FoodFinder App. I\'ve already ordered more than 10 meals on it.',
       url: files.appLogo,
-      // urls: [files.image1, files.image2]
+      // urls: [files.image1, files.image2] // multiple share files
+      // url: files.samplePdf // send pdf file
     }
 
     try {
