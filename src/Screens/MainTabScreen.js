@@ -57,7 +57,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Explore',
           tabBarColor: '#d02868',
           tabBarIcon: ({ color }) => (
-            <Icon name="settings-outline" color={color} size={26} />
+            <Icon name="aperture-outline" color={color} size={26} />
           ),
         }}
       />
