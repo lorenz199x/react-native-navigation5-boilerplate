@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     borderTopColor: '#dddddd',
     borderTopWidth: 1,
     flexDirection: 'row',
-    // height: 100, original
+    height: 100, //original
     height: 50,
 
   },
