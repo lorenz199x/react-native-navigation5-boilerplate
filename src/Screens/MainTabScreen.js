@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { useTheme, Avatar } from 'react-native-paper';
-import {View} from 'react-native-animatable';
+import { View } from 'react-native-animatable';
+import { TouchableOpacity } from 'react-native'
 
 import HomeScreen from './HomeScreen';
 import NotificationScreen from './NotificationScreen';
@@ -28,7 +29,7 @@ const MainTabScreen = () => (
       component={HomeStackScreen}
       options={{
         tabBarLabel: 'Home',
-        tabBarColor: '#009387',
+        tabBarColor: '#177ad1',
         tabBarIcon: ({ color }) => (
           <Icon name="home-outline" color={color} size={26} />
         ),
@@ -39,7 +40,7 @@ const MainTabScreen = () => (
       component={NotificationStackScreen}
       options={{
         tabBarLabel: 'Updates',
-        tabBarColor: '#1f65ff',
+        tabBarColor: '#177ad1',
         tabBarIcon: ({ color }) => (
           <Icon name="notifications-outline" color={color} size={26} />
         ),
@@ -73,13 +74,16 @@ const MainTabScreen = () => (
 export default MainTabScreen;
 
 const HomeStackScreen = ({ navigation }) => {
+  const { colors } = useTheme()
   return (
     <HomeStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#009387',
+          backgroundColor: colors.background,
+          shadowColor: colors.background,
+          elevation: 0
         },
-        headerTintColor: '#fff',
+        headerTintColor: colors.text,
         headerTitleStyle: {
           fontWeight: 'bold',
         },
@@ -88,13 +92,40 @@ const HomeStackScreen = ({ navigation }) => {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Overview',
+          title: 'Reaniverse',
           headerLeft: () => (
-            <Icon.Button
-              name="menu-outline"
-              size={25}
-              backgroundColor="#009387"
-              onPress={() => navigation.openDrawer()}></Icon.Button>
+            <View style={{ marginLeft: 10 }}>
+              <Icon.Button
+                name="menu-outline"
+                size={25}
+                color={colors.text}
+                backgroundColor={colors.background}
+                onPress={() => navigation.openDrawer()} />
+            </View>
+          ),
+          headerRight: () => (
+            <View style={{flexDirection: 'row', marginRight: 10}}>
+              <Icon.Button
+                name="search-outline"
+                size={25}
+                color={colors.text}
+                backgroundColor={colors.background}
+                onPress={() => {}}
+              />
+              <TouchableOpacity
+                style={{paddingHorizontal: 10, marginTop: 5}}
+                onPress={() => {
+                  navigation.navigate('Profile');
+                }}>
+                <Avatar.Image
+                  source={{
+                    uri:
+                      'https://api.adorable.io/avatars/80/abott@adorable.png',
+                  }}
+                  size={30}
+                />
+              </TouchableOpacity>
+            </View>
           ),
         }}
       />
@@ -106,7 +137,7 @@ const NotificationStackScreen = ({ navigation }) => (
   <NotificationStack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: '#1f65ff',
+        backgroundColor: '#177ad1',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -121,7 +152,7 @@ const NotificationStackScreen = ({ navigation }) => (
           <Icon.Button
             name="menu-outline"
             size={25}
-            backgroundColor="#1f65ff"
+            backgroundColor="#177ad1"
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
       }}
