@@ -181,7 +181,7 @@ const SignInScreen = ({navigation}) => {
         )}
 
         <TouchableOpacity>
-          <Text style={{color: '#009387', marginTop: 15}}>
+          <Text style={{color: '#0812c7', marginTop: 15}}> {/** original color of text and button 009387 */}
             Forgot password?
           </Text>
         </TouchableOpacity>
@@ -193,7 +193,8 @@ const SignInScreen = ({navigation}) => {
               loginHandle(data.username, data.password);
             }}>
             <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
+              // colors={['#08d4c4', '#01ab9d']}
+              colors={['#0812c7', '#020428']}
               style={styles.signIn}>
               <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
             </LinearGradient>
@@ -203,9 +204,9 @@ const SignInScreen = ({navigation}) => {
             onPress={() => navigation.navigate('SignUpScreen')}
             style={[
               styles.signIn,
-              {borderColor: '#009387', borderWidth: 1, marginTop: 15},
+              {borderColor: '#0812c7', borderWidth: 1, marginTop: 15},
             ]}>
-            <Text style={[styles.textSign, {color: '#009387'}]}>Sign Up</Text>
+            <Text style={[styles.textSign, {color: '#0812c7'}]}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
@@ -218,7 +219,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009387',
+    backgroundColor: '#02065e', // 009387
   },
   header: {
     flex: 1,

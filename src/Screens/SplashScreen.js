@@ -21,7 +21,7 @@ const SplashScreen = ({navigation}) => {
         <Animatable.Image
           animation='bounceIn'
           duration={1500}
-          source={require('../../assets/logo.png')}
+          source={require('../../assets/reaniverse.jpg')}
           style={styles.logo}
           resizeMode="stretch"
         />
@@ -35,7 +35,8 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
             <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
+              // colors={['#08d4c4', '#01ab9d']}
+              colors={['#0812c7', '#020428']}
               style={styles.signIn}>
               <Text style={styles.textSign}>Get Started</Text>
               <MaterialIcons name="navigate-next" color="#fff" size={20} />
@@ -55,7 +56,7 @@ const height_logo = height * 0.28;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009387',
+    backgroundColor: '#020428',
   },
   header: {
     flex: 2,

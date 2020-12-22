@@ -14,6 +14,9 @@ import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme,
 } from 'react-native-paper';
+
+import LottieView from 'lottie-react-native';
+
 import {AuthContext} from './components/context';
 
 import {DrawerContent} from './Screens/DrawerContent';
@@ -138,14 +141,15 @@ const AppNavigator = () => {
       } catch (e) {
         console.log(e);
       }
-      dispatch({type: 'REGISTER', token: userToken});
-    }, 1000);
+      dispatch({type: 'RETRIEVE_TOKEN', token: userToken});
+    }, 3500);
   }, []);
 
   if (loginState.isLoading) {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator size="large" />
+        {/**<ActivityIndicator size="large" /> */}
+        <LottieView source={require('../assets/stay-home-stay-safe.json')} autoPlay loop />
       </View>
     );
   }

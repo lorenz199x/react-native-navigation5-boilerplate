@@ -162,7 +162,8 @@ const SignUpScreen = ({navigation}) => {
               {borderColor: '#009387', borderWidth: 1, marginTop: 15},
             ]}>
             <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
+              // colors={['#08d4c4', '#01ab9d']}
+              colors={['#0812c7', '#020428']}
               style={styles.signIn}>
               <Text style={[styles.textSign, {color: '#fff'}]}>Sign Up</Text>
             </LinearGradient>
@@ -172,9 +173,9 @@ const SignUpScreen = ({navigation}) => {
             onPress={() => navigation.goBack()}
             style={[
               styles.signIn,
-              {borderColor: '#009387', borderWidth: 1, marginTop: 15},
+              {borderColor: '#0812c7', borderWidth: 1, marginTop: 15},
             ]}>
-            <Text style={[styles.textSign, {color: '#009387'}]}>Sign In</Text>
+            <Text style={[styles.textSign, {color: '#0812c7'}]}>Sign In</Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
@@ -187,7 +188,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009387',
+    backgroundColor: '#02065e',
   },
   header: {
     flex: 1,
