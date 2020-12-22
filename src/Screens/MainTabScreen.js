@@ -13,6 +13,8 @@ import NotificationScreen from './NotificationScreen';
 import ExplorerScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
 import EditProfileScreen from './EditProfileScreen';
+import CardListScreen from './CardListScreen';
+import CardItemDetails from './CardItemDetails';
 
 const HomeStack = createStackNavigator();
 const NotificationStack = createStackNavigator();
@@ -104,16 +106,16 @@ const HomeStackScreen = ({ navigation }) => {
             </View>
           ),
           headerRight: () => (
-            <View style={{flexDirection: 'row', marginRight: 10}}>
+            <View style={{ flexDirection: 'row', marginRight: 10 }}>
               <Icon.Button
                 name="search-outline"
                 size={25}
                 color={colors.text}
                 backgroundColor={colors.background}
-                onPress={() => {}}
+                onPress={() => { }}
               />
               <TouchableOpacity
-                style={{paddingHorizontal: 10, marginTop: 5}}
+                style={{ paddingHorizontal: 10, marginTop: 5 }}
                 onPress={() => {
                   navigation.navigate('Profile');
                 }}>
@@ -128,6 +130,26 @@ const HomeStackScreen = ({ navigation }) => {
             </View>
           ),
         }}
+      />
+
+      <HomeStack.Screen
+        name="CardListScreen"
+        component={CardListScreen}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerBackTitleVisible: false
+        })}
+      />
+      <HomeStack.Screen
+        name="CardItemDetails"
+        component={CardItemDetails}
+        options={({ route }) => ({
+          // title: route.params.title,
+          headerBackTitleVisible: false,
+          headerTitle: false,
+          headerTransparent: true,
+          headerTintColor: '#fff'
+        })}
       />
     </HomeStack.Navigator>
   );
